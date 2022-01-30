@@ -1,2 +1,0 @@
-add_lunch_combo twrp_iPlay_20-userdebug
-add_lunch_combo twrp_iPlay_20-eng
