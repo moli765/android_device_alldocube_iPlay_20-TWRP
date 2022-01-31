@@ -13,7 +13,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
-PRODUCT_SOONG_NAMESPACES += $(LOCAL_DIR)/init
+
 PRODUCT_MAKEFILES := $(LOCAL_DIR)/twrp_iPlay_20.mk
 
 COMMON_LUNCH_CHOICES := twrp_iPlay_20-eng
