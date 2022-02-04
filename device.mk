@@ -16,5 +16,5 @@
 # limitations under the License.
 #
 
-LOCAL_PATH := vendor/alldocube/iPlay_20
+LOCAL_PATH :=  device/alldocube/iPlay_20
 
