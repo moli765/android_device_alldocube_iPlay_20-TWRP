@@ -27,7 +27,7 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
 $(call inherit-product, $(SRC_TARGET_DIR)/product/languages_full.mk)
 
 # Inherit from iPlay_20 device
-$(call inherit-product, vendor/alldocube/iPlay_20/device.mk)
+$(call inherit-product, device/alldocube/iPlay_20/device.mk)
 
 # Inherit from TWRP common configurations
 $(call inherit-product, vendor/omni/config/common.mk)
@@ -36,11 +36,7 @@ $(call inherit-product, vendor/omni/config/gsm.mk)
 
 PRODUCT_COPY_FILES += $(call find-copy-subdir-files,*,$(LOCAL_PATH)/recovery/root,recovery/root)
 
-#Extra required packages
-PRODUCT_PACKAGES += \
-    libion.recovery \
-    android.hardware.fastboot@1.0-impl-mock \
-    android.hardware.fastboot@1.0-impl-mock.recovery
+
 
 ## Device identifier. This must come after all inclusions
 PRODUCT_DEVICE := iPlay_20
@@ -48,11 +44,3 @@ PRODUCT_NAME := twrp_iPlay_20
 PRODUCT_BRAND := Alldocube
 PRODUCT_MODEL := iPlay_20
 PRODUCT_MANUFACTURER := Alldocube
-
-# HACK: Set vendor patch level
-PRODUCT_PROPERTY_OVERRIDES += \
-    ro.vendor.build.security_patch=2090-12-8
-
-PRODUCT_SYSTEM_PROPERTY_BLACKLIST := \
-    ro.product.device \
-    ro.product.name
