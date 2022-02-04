@@ -14,7 +14,7 @@
 # limitations under the License.
 #
 
-DEVICE_PATH := device/alldocube/iPlay_20
+DEVICE_PATH := vendor/alldocube/iPlay_20
 
 # Architecture
 TARGET_ARCH := arm64
@@ -42,7 +42,7 @@ TARGET_BOARD_PLATFORM :=  sp9863a
 
 # Kernel
 BOARD_KERNEL_CMDLINE := console=ttyS1,115200n8
-BOARD_KERNEL_CMDLINE += androidboot.selinux=permissive
+#BOARD_KERNEL_CMDLINE += androidboot.selinux=permissive
 BOARD_KERNEL_IMAGE_NAME := kernel
 BOARD_KERNEL_BASE := 0x00000000
 BOARD_KERNEL_OFFSET := 0x00008000
@@ -50,12 +50,12 @@ BOARD_KERNEL_PAGESIZE := 2048
 BOARD_KERNEL_TAGS_OFFSET := 0x00000100
 BOARD_KERNEL_SECOND_OFFSET := 0x00f00000
 BOARD_RAMDISK_OFFSET := 0x05400000
-BOARD_DTB_OFFSET := 0x01a0d800
+BOARD_DTB_OFFSET := 0x015f1000
 BOARD_BOOTIMG_HEADER_VERSION := 2
 
 TARGET_KERNEL_ARCH := arm64
 TARGET_KERNEL_HEADER_ARCH := arm64
-TARGET_PREBUILT_KERNEL := $(DEVICE_PATH)/prebuilt/kernel
+TARGET_PREBUILT_KERNEL := $(DEVICE_PATH)/prebuilt/zImage
 
 BOARD_PREBUILT_DTBIMAGE_DIR := $(DEVICE_PATH)/prebuilt/dtb
 BOARD_PREBUILT_DTBOIMAGE := $(DEVICE_PATH)/prebuilt/dtbo
@@ -76,7 +76,7 @@ TARGET_OTA_ASSERT_DEVICE := iPlay_20
 
 # Crypto
 PLATFORM_SECURITY_PATCH := 2099-12-31
-PLATFORM_VERSION := 16.1.0
+PLATFORM_VERSION := 16.0.0
 VENDOR_SECURITY_PATCH := 2099-12-31
 
 # Android Verified Boot
@@ -87,6 +87,13 @@ BOARD_AVB_ENABLE := false
 BOARD_FLASH_BLOCK_SIZE := 131072 # (BOARD_KERNEL_PAGESIZE * 64)
 BOARD_BOOTIMAGE_PARTITION_SIZE := 36700160 # 36 MB
 BOARD_RECOVERYIMAGE_PARTITION_SIZE := 41943040 # 42 MB
+
+# System as root
+TARGET_NO_RECOVERY := false
+BOARD_BUILD_SYSTEM_ROOT_IMAGE := false
+BOARD_USES_RECOVERY_AS_BOOT :=  false
+BOARD_ROOT_EXTRA_FOLDERS := bluetooth dsp firmware persist
+
 
 # File systems
 BOARD_HAS_LARGE_FILESYSTEM := true
@@ -109,7 +116,7 @@ BOARD_VENDORIMAGE_FILE_SYSTEM_TYPE := ext4
 TARGET_COPY_OUT_VENDOR := vendor
 
 # System props
-TARGET_SYSTEM_PROP := $(DEVICE_PATH)/system.prop
+#TARGET_SYSTEM_PROP := $(DEVICE_PATH)/system.prop
 
 # Metadata
 BOARD_USES_METADATA_PARTITION := true
@@ -124,7 +131,7 @@ TW_THEME := portrait_hdpi
 TW_EXTRA_LANGUAGES := true
 TW_INCLUDE_NTFS_3G := true
 TW_USE_TOOLBOX := true
-TW_BRIGHTNESS_PATH := "/sys/devices/platform/backlight/backlight/sprd_backlight/brightness"
+TW_BRIGHTNESS_PATH := "/sys/devices/platform/sprd_backlight/backlight/sprd_backlight/brightness"
 TW_MAX_BRIGHTNESS := 255
 TW_DEFAULT_BRIGHTNESS := 64 # 25%
 TW_EXCLUDE_DEFAULT_USB_INIT := true
@@ -138,7 +145,7 @@ TW_INCLUDE_FBE_METADATA_DECRYPT := true
 TW_INCLUDE_RESETPROP := true
 TW_INCLUDE_REPACKTOOLS := true
 
-TW_CUSTOM_CPU_TEMP_PATH := /sys/devices/virtual/thermal/thermal_zone4/temp
+TW_CUSTOM_CPU_TEMP_PATH := /sys/devices/virtual/thermal/thermal_zone3/temp
 TW_Y_OFFSET := 115
 TW_H_OFFSET := -115
 TW_EXCLUDE_APEX := true

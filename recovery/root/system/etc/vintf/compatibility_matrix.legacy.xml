@@ -1,11 +1,11 @@
 <!--
     Input:
         compatibility_matrix.legacy.xml
-        matrix_kernel_config_o_3.18.xml
-        matrix_kernel_config_o_4.4.xml
-        matrix_kernel_config_o_4.9.xml
+        matrix.xml
+        matrix.xml
+        matrix.xml
 -->
-<compatibility-matrix version="2.0" type="framework" level="legacy">
+<compatibility-matrix version="1.0" type="framework" level="legacy">
     <hal format="hidl" optional="false">
         <name>android.hardware.audio</name>
         <version>2.0</version>
@@ -78,7 +78,7 @@
             <instance>legacy/0</instance>
         </interface>
     </hal>
-    <hal format="hidl" optional="true">
+    <hal format="hidl" optional="false">
         <name>android.hardware.configstore</name>
         <version>1.0</version>
         <interface>
@@ -330,7 +330,7 @@
             <instance>default</instance>
         </interface>
     </hal>
-    <kernel version="3.18.0" level="legacy">
+    <kernel version="3.18.0">
         <config>
             <key>CONFIG_ANDROID</key>
             <value type="tristate">y</value>
@@ -876,6 +876,10 @@
             <value type="tristate">y</value>
         </config>
         <config>
+            <key>CONFIG_RT_GROUP_SCHED</key>
+            <value type="tristate">y</value>
+        </config>
+        <config>
             <key>CONFIG_SECCOMP</key>
             <value type="tristate">y</value>
         </config>
@@ -936,7 +940,7 @@
             <value type="tristate">y</value>
         </config>
     </kernel>
-    <kernel version="3.18.0" level="legacy">
+    <kernel version="3.18.0">
         <conditions>
             <config>
                 <key>CONFIG_ARM64</key>
@@ -960,7 +964,7 @@
             <value type="tristate">y</value>
         </config>
     </kernel>
-    <kernel version="4.4.0" level="legacy">
+    <kernel version="4.4.0">
         <config>
             <key>CONFIG_ANDROID</key>
             <value type="tristate">y</value>
@@ -1503,6 +1507,10 @@
         </config>
         <config>
             <key>CONFIG_RTC_CLASS</key>
+            <value type="tristate">y</value>
+        </config>
+        <config>
+            <key>CONFIG_RT_GROUP_SCHED</key>
             <value type="tristate">y</value>
         </config>
         <config>
@@ -1594,7 +1602,7 @@
             <value type="tristate">y</value>
         </config>
     </kernel>
-    <kernel version="4.4.0" level="legacy">
+    <kernel version="4.4.0">
         <conditions>
             <config>
                 <key>CONFIG_ARM64</key>
@@ -1618,7 +1626,7 @@
             <value type="tristate">y</value>
         </config>
     </kernel>
-    <kernel version="4.9.0" level="legacy">
+    <kernel version="4.9.0">
         <config>
             <key>CONFIG_ANDROID</key>
             <value type="tristate">y</value>
@@ -2164,6 +2172,10 @@
             <value type="tristate">y</value>
         </config>
         <config>
+            <key>CONFIG_RT_GROUP_SCHED</key>
+            <value type="tristate">y</value>
+        </config>
+        <config>
             <key>CONFIG_SECCOMP</key>
             <value type="tristate">y</value>
         </config>
@@ -2248,7 +2260,7 @@
             <value type="tristate">y</value>
         </config>
     </kernel>
-    <kernel version="4.9.0" level="legacy">
+    <kernel version="4.9.0">
         <conditions>
             <config>
                 <key>CONFIG_ARM64</key>
