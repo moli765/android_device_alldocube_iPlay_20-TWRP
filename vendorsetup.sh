@@ -16,5 +16,5 @@
 # limitations under the License.
 #
 
-LOCAL_PATH := device/alldocube/iPlay_20
-
+add_lunch_combo omni_iPlay_20-userdebug
+#add_lunch_combo omni_iPlay_20-eng
