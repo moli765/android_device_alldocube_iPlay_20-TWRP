@@ -59,10 +59,6 @@ on boot
 
     class_start default
 
-# Load properties, pre-Android 6.0
-on load_all_props_action
-    load_all_props
-
 # Load properties, Android 6.0+
 on load_system_props_action
     load_system_props
