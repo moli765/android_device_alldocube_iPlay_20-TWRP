@@ -15,7 +15,6 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
-COMMON_LUNCH_CHOICES := \
-	omni_iPlay_20-eng	
+COMMON_LUNCH_CHOICES := omni_iPlay_20-eng
 PRODUCT_MAKEFILES := \
      $(LOCAL_DIR)/omni_iPlay_20.mk
