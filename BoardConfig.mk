@@ -66,6 +66,11 @@ BOARD_SUPER_PARTITION_GROUPS := google_dynamic_partitions
 BOARD_GOOGLE_DYNAMIC_PARTITIONS_SIZE := 4299161600
 BOARD_GOOGLE_DYNAMIC_PARTITIONS_LIST := system vendor product 
 
+# System as root
+#BOARD_BUILD_SYSTEM_ROOT_IMAGE := true
+BOARD_SUPPRESS_SECURE_ERASE := true
+BOARD_ROOT_EXTRA_FOLDERS := bluetooth dsp firmware persist
+
 # Kernel
 BOARD_KERNEL_CMDLINE := console=ttyS1,115200n8 buildvariant=user
 BOARD_KERNEL_BASE := 0x00000000
