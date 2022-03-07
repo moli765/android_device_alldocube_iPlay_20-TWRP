@@ -1,2 +1,2 @@
-TWRP for soc sp9853a is  cube iplay_20 
+TWRP for soc sp9863a is  cube iplay_20 
 ================================================
